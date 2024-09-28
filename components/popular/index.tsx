@@ -5,6 +5,7 @@ import Button from "../button";
 import { useQuery } from "@apollo/client";
 import { GET_COLOUR_CATEGORY_DATA } from "@/api/color-category";
 import client from "../../lib/apolloClient";
+import Loader from "../loader";
 
 type PropsType = {
   homePageData: any;
@@ -37,6 +38,10 @@ const PopularColors = ({ homePageData }: PropsType) => {
       </div>
     );
   };
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div>

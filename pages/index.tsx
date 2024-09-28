@@ -11,9 +11,9 @@ import Services from "@/components/services-section";
 export default function Home() {
   const { loading, error, data } = useQuery(GET_HOMEPAGE_DATA, { client });
 
-  // if (loading) {
-  //   return <Loader />;
-  // }
+  if (loading) {
+    return <Loader />;
+  }
 
   const { pages } = data;
 

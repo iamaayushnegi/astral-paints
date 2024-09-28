@@ -5,6 +5,7 @@ import Subtitle from "../subtitle";
 import Title from "../title";
 import { GET_BLOGS_DATA } from "@/api/blog";
 import dayjs from "dayjs";
+import Loader from "../loader";
 
 type PropsType = {
   blogData: any;
@@ -32,6 +33,11 @@ const Blogs = ({ blogData }: PropsType) => {
       </div>
     );
   };
+
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
     <div>
       <Subtitle text={blogData.blogSubtitle} />
