@@ -17,14 +17,23 @@ const PopularColors = ({ homePageData }: PropsType) => {
 
   const renderContent = (item: any) => {
     return (
-      <div
-        key={item.slug}
-        style={{
-          backgroundColor: item.colourInfo.selectColor,
-        }}
-      >
-        <p>{item.date}</p>
-        <p>{item.title}</p>
+      <div className="aayush-group aayush-flex aayush-flex-col aayush-justify-center aayush-cursor-pointer hover:aayush-shadow-[0px_4px_20px_0px_#0000004D] aayush-rounded-[20px] aayush-py-5">
+        <p className="aayush-invisible group-hover:aayush-visible aayush-text-xs aayush-font-semibold aayush-text-center">
+          Astral Paints
+        </p>
+        <div
+          key={item.slug}
+          className="aayush-relative aayush-h-[158px]"
+          style={{
+            backgroundColor: item.colourInfo.selectColor,
+          }}
+        >
+          <div className="aayush-absolute aayush-inset-0 aayush-m-1 aayush-border-[1px] aayush-border-white" />
+        </div>
+        <p className="aayush-text-[15px] aayush-text-center">Colour Name</p>
+        <p className="aayush-text-sm aayush-text-center aayush-text-[#656565]">
+          {item.colourInfo.selectColor}
+        </p>
       </div>
     );
   };
@@ -32,14 +41,19 @@ const PopularColors = ({ homePageData }: PropsType) => {
   return (
     <div>
       <Subtitle text={homePageData.homeColoursSubtitle} />
-      <Title text={homePageData.homeColoursTitle} />
+      <Title text={homePageData.homeColoursTitle} color="#00AE44" />
       <Button
+        color="#00AE44"
+        variant="outlined"
         link={homePageData.homeColoursButton.url}
         text={homePageData.homeColoursButton.title}
       />
 
-      {!loading &&
-        data.allColourCategory.nodes[0].colours.nodes.map(renderContent)}
+      {!loading && (
+        <div className="aayush-grid aayush-gap-x-[14px] aayush-grid-cols-3">
+          {data.allColourCategory.nodes[0].colours.nodes.map(renderContent)}
+        </div>
+      )}
     </div>
   );
 };

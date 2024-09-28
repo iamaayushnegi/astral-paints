@@ -5,12 +5,26 @@ type PropsType = {
   text: string;
   color?: string;
   link: string;
+  variant?: string;
 };
 
-const Button = ({ text, color, link }: PropsType) => {
+const Button = ({ text, color, link, variant = "filled" }: PropsType) => {
+  const buttonStyles =
+    variant === "outlined"
+      ? `aayush-border-[1px] aayush-rounded-[20px]`
+      : "aayush-border-none aayush-bg-white";
+
   return (
     <Link href={link}>
-      <button>{text}</button>
+      <button
+        style={{
+          color: color,
+          borderColor: variant === "outlined" ? color : "",
+        }}
+        className={`aayush-px-4 aayush-py-[14px] aayush-text-xs aayush-font-semibold ${buttonStyles}`}
+      >
+        {text}
+      </button>
     </Link>
   );
 };
