@@ -46,16 +46,18 @@ const PopularColors = ({ homePageData }: PropsType) => {
   return (
     <div>
       <Subtitle text={homePageData.homeColoursSubtitle} />
-      <Title text={homePageData.homeColoursTitle} color="#00AE44" />
-      <Button
-        color="#00AE44"
-        variant="outlined"
-        link={homePageData.homeColoursButton.url}
-        text={homePageData.homeColoursButton.title}
-      />
+      <div className="aayush-flex aayush-justify-between aayush-items-center">
+        <Title text={homePageData.homeColoursTitle} color="#00AE44" />
+        <Button
+          color="#00AE44"
+          variant="outlined"
+          link={homePageData.homeColoursButton.url}
+          text={homePageData.homeColoursButton.title}
+        />
+      </div>
 
       {!loading && (
-        <div className="aayush-grid aayush-gap-x-[14px] aayush-grid-cols-3">
+        <div className="aayush-py-[25px] aayush-grid aayush-gap-x-[14px] aayush-grid-cols-3">
           {data.allColourCategory.nodes[0].colours.nodes.map(renderContent)}
         </div>
       )}

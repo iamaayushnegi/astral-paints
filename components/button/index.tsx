@@ -11,7 +11,7 @@ type PropsType = {
 const Button = ({ text, color, link, variant = "filled" }: PropsType) => {
   const buttonStyles =
     variant === "outlined"
-      ? `aayush-border-[1px] aayush-rounded-[20px]`
+      ? `aayush-border-[1px]`
       : "aayush-border-none aayush-bg-white";
 
   return (
@@ -21,7 +21,7 @@ const Button = ({ text, color, link, variant = "filled" }: PropsType) => {
           color: color,
           borderColor: variant === "outlined" ? color : "",
         }}
-        className={`aayush-px-4 aayush-py-[14px] aayush-text-xs aayush-font-semibold ${buttonStyles}`}
+        className={`aayush-px-4 aayush-py-[14px] aayush-text-xs aayush-font-semibold aayush-rounded-[20px] ${buttonStyles}`}
       >
         {text}
       </button>
