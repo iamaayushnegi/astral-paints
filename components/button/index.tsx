@@ -8,7 +8,12 @@ type PropsType = {
   variant?: string;
 };
 
-const Button = ({ text, color, link, variant = "filled" }: PropsType) => {
+const Button = ({
+  text,
+  color = "#000",
+  link,
+  variant = "filled",
+}: PropsType) => {
   const buttonStyles =
     variant === "outlined"
       ? `aayush-border-[1px]`
