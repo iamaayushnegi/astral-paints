@@ -18,12 +18,14 @@ const PopularColors = ({ homePageData }: PropsType) => {
 
   const renderContent = (item: any) => {
     return (
-      <div className="aayush-group aayush-flex aayush-flex-col aayush-justify-center aayush-cursor-pointer hover:aayush-shadow-[0px_4px_20px_0px_#0000004D] aayush-rounded-[20px] aayush-py-5">
+      <div
+        key={item.slug}
+        className="aayush-group aayush-flex aayush-flex-col aayush-justify-center aayush-cursor-pointer hover:aayush-shadow-[0px_4px_20px_0px_#0000004D] aayush-rounded-[20px] aayush-py-5"
+      >
         <p className="aayush-invisible group-hover:aayush-visible aayush-text-xs aayush-font-semibold aayush-text-center">
           Astral Paints
         </p>
         <div
-          key={item.slug}
           className="aayush-relative aayush-h-[158px]"
           style={{
             backgroundColor: item.colourInfo.selectColor,
