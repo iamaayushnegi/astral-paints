@@ -44,6 +44,7 @@ const HeroSection = ({ homePageData }: PropsType) => {
 
   return (
     <Swiper
+      id="hero"
       direction="vertical"
       pagination={{ clickable: true }}
       modules={[Pagination]}

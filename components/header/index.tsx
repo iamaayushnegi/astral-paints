@@ -60,7 +60,7 @@ const Header = () => {
   };
 
   return (
-    <div className="aayush-h-[100px] aayush-bg-[#0060AF] aayush-px-[80px] aayush-flex aayush-items-center aayush-justify-between">
+    <div className="aayush-sticky aayush-top-0 aayush-z-10 aayush-h-[100px] aayush-bg-[#0060AF] aayush-px-[80px] aayush-flex aayush-items-center aayush-justify-between">
       <Logo />
       <div className="aayush-flex aayush-items-center aayush-gap-8">
         {HEADER_URL_DATA.map(renderLinks)}

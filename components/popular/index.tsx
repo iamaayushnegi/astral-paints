@@ -46,7 +46,7 @@ const PopularColors = ({ homePageData }: PropsType) => {
   }
 
   return (
-    <div>
+    <div id="popular" className="aayush-h-[calc(100vh-100px)]">
       <Subtitle text={homePageData.homeColoursSubtitle} />
       <div className="aayush-flex aayush-justify-between aayush-items-center">
         <Title text={homePageData.homeColoursTitle} color="#00AE44" />

@@ -39,7 +39,7 @@ const Blogs = ({ blogData }: PropsType) => {
   }
 
   return (
-    <div>
+    <div id="blogs" className="aayush-h-[calc(100vh-100px)]">
       <Subtitle text={blogData.blogSubtitle} />
       <Title text={blogData.blogTitle} color="#00C1DE" />
 

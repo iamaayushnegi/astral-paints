@@ -9,30 +9,32 @@ type PropsType = {
 
 const Dealer = ({ homePageData }: PropsType) => {
   return (
-    <div
-      style={{
-        display: "flex",
-        gap: "20px",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        color: "#fff",
-        margin: "0px -80px",
-        width: "calc(100vw - 15)",
-        height: "358px",
-        backgroundImage: `url(/dealer-banner.png)`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      <Subtitle text={homePageData.homeJoinSubtitle} />
-      <Title text={homePageData.homeJoinTitle} stroke={false} />
-      <p className="aayush-text-base aayush-w-[483px] aayush-text-center">
-        Lorem ipsum dolor sit amet consectetur. Integer dui quam nisi in ornare.
-        Nec in tristique et ultrices sit ullamcorper massa tempor et.
-      </p>
-      <Button text="Read More" link="#" />
+    <div id="dealer" className="aayush-h-[calc(100vh-100px)]">
+      <div
+        style={{
+          display: "flex",
+          gap: "20px",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          color: "#fff",
+          margin: "0px -80px",
+          width: "calc(100vw - 15)",
+          height: "358px",
+          backgroundImage: `url(/dealer-banner.png)`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <Subtitle text={homePageData.homeJoinSubtitle} />
+        <Title text={homePageData.homeJoinTitle} stroke={false} />
+        <p className="aayush-text-base aayush-w-[483px] aayush-text-center">
+          Lorem ipsum dolor sit amet consectetur. Integer dui quam nisi in
+          ornare. Nec in tristique et ultrices sit ullamcorper massa tempor et.
+        </p>
+        <Button text="Read More" link="#" />
+      </div>
     </div>
   );
 };

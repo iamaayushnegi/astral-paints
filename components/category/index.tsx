@@ -7,7 +7,7 @@ type PropsType = {
 
 const Category = ({ homePageData }: PropsType) => {
   return (
-    <div>
+    <div id="category" className="aayush-h-[calc(100vh-100px)]">
       <Subtitle text={homePageData.homeCategorySubtitle} />
       <Title text={homePageData.homeCategoryTitle} color="#FF9119" />
     </div>
