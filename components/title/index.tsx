@@ -9,7 +9,7 @@ type PropsType = {
 
 const Title = ({ text, color, stroke = true }: PropsType) => {
   return (
-    <div className="aayush-flex aayush-items-center aayush-gap-x-6">
+    <div className="aayush-flex aayush-items-center aayush-gap-x-6 hidden">
       <p className="aayush-text-3xl aayush-font-bold">{text}</p>
       {stroke && <ColorStroke color={color} />}
     </div>

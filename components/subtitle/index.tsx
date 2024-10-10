@@ -5,7 +5,7 @@ type PropsType = {
 };
 
 const Subtitle = ({ text }: PropsType) => {
-  return <p className="aayush-text-lg aayush-font-medium">{text}</p>;
+  return <p className="aayush-text-lg aayush-font-medium hidden">{text}</p>;
 };
 
 export default Subtitle;

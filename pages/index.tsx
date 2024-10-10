@@ -71,6 +71,27 @@ export default function Home() {
     };
   }, [activeSection]);
 
+  useEffect(() => {
+    const fadeAnimation = () => {
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            } else {
+              entry.target.classList.remove("show");
+            }
+          });
+        });
+
+        const hiddenElements = document.querySelectorAll(".hidden");
+        hiddenElements.forEach((el) => observer.observe(el));
+      }
+    };
+
+    fadeAnimation();
+  }, [data]);
+
   if (loading) {
     return <Loader />;
   }
@@ -121,24 +142,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        {/* <div className="aayush-relative">
-         */}
-        {/* <div className="aayush-absolute -aayush-bottom-56 aayush-z-10">
-          <RainbowBanner />
-        </div> */}
-        {/* </div> */}
-        {/* <div className="aayush-flex aayush-w-full">
-        <div className="aayush-w-[15px] aayush-bg-gradient-to-b aayush-from-[#E70000] aayush-via-[#F5E847] aayush-to-[#00C1DE]"></div>
-        <div className="aayush-px-[80px] aayush-flex aayush-flex-1 aayush-flex-col aayush-gap-[5.313rem]">
-          <About homePageData={pages.nodes[0].homepage} />
-          <Category homePageData={pages.nodes[0].homepage} />
-          <Services homePageData={pages.nodes[0].homepage} />
-          <PopularColors homePageData={pages.nodes[0].homepage} />
-          <Dealer homePageData={pages.nodes[0].homepage} />
-          <Blogs blogData={pages.nodes[0].homepage} />
-        </div>
-      </div> */}
         {/* <Footer /> */}
       </div>
     </>
